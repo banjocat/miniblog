@@ -3,10 +3,14 @@ from django.utils import timezone
 
 from django.db import models
 
+DRAFT = 1
+POSTED = 2
+DELETED = 3
+
 POST_STATUS = (
-    (1, 'DRAFT'),
-    (2, 'POSTED'),
-    (3, 'DELETED')
+    (DRAFT, 'DRAFT'),
+    (POSTED, 'POSTED'),
+    (DELETED, 'DELETED')
 )
 
 # Create your models here.
@@ -18,10 +22,9 @@ class Post(models.Model):
     tags = models.ManyToManyField('Tag')
     status = models.IntegerField(choices=POST_STATUS)
 
-
     @staticmethod
     def get_all_posted_posts():
-        return Post.objects.filter(status=2)
+        return Post.objects.filter(status=POSTED)
 
 
     def __str__(self):
