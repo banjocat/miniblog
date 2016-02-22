@@ -23,9 +23,7 @@
           <div class='row'>
         {% for post in posts %}
         <h1>{{post.title}}</h1>
-        <div id='post-{{post.pk}}' class='row post'>
-          {{post.text}}
-        </div>
+        <div id='post-{{post.pk}}' class='row post'>{{post.text}}</div>
         <script>
         var $post = $('#post-{{post.pk}}');
         var mark = $post.html();
