@@ -18,8 +18,15 @@ class Post(models.Model):
     tags = models.ManyToManyField('Tag')
     status = models.IntegerField(choices=POST_STATUS)
 
+
+    @staticmethod
+    def get_all_posted_posts():
+        return Post.objects.filter(status=2)
+
+
     def __str__(self):
         return self.title
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=50)
