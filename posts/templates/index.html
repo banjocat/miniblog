@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Jack Muratore's Blog</title>
   <link rel="stylesheet" href="static/css/style.css">
+  <script src='static/js/jquery.min.js'></script>
+  <script src='static/js/markdown.js'></script>
 </head>
 <body>
   <div class='container'>
@@ -21,8 +23,15 @@
           <div class='row'>
         {% for post in posts %}
         <h1>{{post.title}}</h1>
-        {{post.text}}
-            <div class="well">
+        <div id='post-{{post.pk}}' class='row post'>
+          {{post.text}}
+        </div>
+        <script>
+        var $post = $('#post-{{post.pk}}');
+        var mark = $post.html();
+        $post.html(markdown.toHTML(mark));
+        </script>
+            <div>
               Posted by {{post.author}} on {{post.publish_date}}
             </div>
         {% endfor %}
