@@ -6879,3 +6879,7 @@ button.close {
   position: fixed;
   width: 100%;
 }
+.horizontal-line {
+  border-right: 1px solid #333;
+  max-height: 100%;
+}
