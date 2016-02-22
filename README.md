@@ -1,0 +1,2 @@
+# miniblog
+Another django blog!
