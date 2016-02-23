@@ -1,11 +1,42 @@
 @import "../../node_modules/bootstrap/less/bootstrap.less";
 // Eventually add this to django-admin
 @import "../../node_modules/bootstrap-markdown/less/bootstrap-markdown.less";
+@import "https://fonts.googleapis.com/css?family=Fira+Sans:400";
+
+@font-family-base: 'Fira Sans', sans-serif;
 
 
 @line-color: #333;
 
+
 .horizontal-line {
-  border-right: 1px solid @line-color;
-  max-height: 100%;
+  border-left: 1px solid @line-color;
+  padding-left: 5%;
+  margin-left: 1%;
+}
+
+.underline {
+  border-bottom: 1px solid @line-color;
+  padding-bottom: 2%;
+}
+
+.post-title {
+  color: @text-color;
+}
+
+.developer {
+  margin-left: 1%;
+}
+
+.caption {
+  border-top: 1px solid @line-color;
+}
+
+.title {
+  margin-bottom: 4%;
+}
+
+.post {
+  margin-left: 10px;
+  margin-bottom: 10%;
 }

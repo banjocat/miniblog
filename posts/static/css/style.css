@@ -4,6 +4,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import "https://fonts.googleapis.com/css?family=Fira+Sans:400";
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -1071,7 +1072,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -5963,7 +5964,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6081,7 +6082,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6880,6 +6881,27 @@ button.close {
   width: 100%;
 }
 .horizontal-line {
-  border-right: 1px solid #333;
-  max-height: 100%;
+  border-left: 1px solid #333;
+  padding-left: 5%;
+  margin-left: 1%;
+}
+.underline {
+  border-bottom: 1px solid #333;
+  padding-bottom: 2%;
+}
+.post-title {
+  color: #333333;
+}
+.developer {
+  margin-left: 1%;
+}
+.caption {
+  border-top: 1px solid #333;
+}
+.title {
+  margin-bottom: 4%;
+}
+.post {
+  margin-left: 10px;
+  margin-bottom: 10%;
 }

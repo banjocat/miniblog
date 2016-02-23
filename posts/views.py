@@ -4,6 +4,7 @@ from django.template import loader
 
 from .models import Post
 
+
 # Create your views here.
 
 def index(request):

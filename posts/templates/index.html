@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jack Muratore's Blog</title>
   <link rel="stylesheet" href="static/css/style.css" />
   <script src='static/js/jquery.min.js'></script>
@@ -9,31 +10,38 @@
 </head>
 <body>
   <div class='container'>
-    <h1><a href='http://www.jackmuratore.com'>Jack Muratore</a></h1>
+    <div class='row title'>
+    <h1>
+      <a href='http://www.jackmuratore.com'>Jack Muratore</a>
+      <small class='developer'>Full stack developer</small>
+    </h1>
+
+  </div>
+  {% load more_filters %}
       <div class="row">
-        <div class="col-md-2 horizontal-line">
+        <div class="col-lg-2 recent-posts">
           <div class="row">
-            <h4>Recent Posts</h4>
+            <h4 class='text-center underline'>Recent Posts</h4>
             {% for post in posts %}
-            <p><a href="#{{post.title}}">{{post.title}}</a></p>
+            <p><a href="#{{ post.title|nametohref }}">{{post.title}}</a></p>
             {% endfor %}
           </div>
         </div>
-        <div class="col-md-7 col-md-offset-1">
-          <div class='row'>
+        <div class="horizontal-line col-lg-7">
         {% for post in posts %}
-        <h1>{{post.title}}</h1>
-        <div id='post-{{post.pk}}' class='row post'>{{post.text}}</div>
+          <div class='row post'>
+        <h1><b><a class='post-title' href='#{{post.title|nametohref}}' name='{{ post.title|nametohref }}'>{{post.title}}</a></b></h1>
+        <div id='post-{{post.pk}}' class='row'>{{post.text}}</div>
         <script>
         var $post = $('#post-{{post.pk}}');
         var mark = $post.html();
         $post.html(markdown.toHTML(mark));
         </script>
-            <div class='well'>
+            <div class='row well'>
               Posted by {{post.author}} on {{post.publish_date}}
             </div>
-        {% endfor %}
         </div>
+        {% endfor %}
       </div>
       </div>
   </div>
