@@ -6,4 +6,9 @@ FROM django:onbuild
 # This allows easier migrations... containers should be immutable
 
 env DJANGO_DOCKER 1
-env DJANGO_SECRET_KEY (INSERT KEY)
+
+# Need to set it!
+ARG KEY
+
+env DJANGO_SECRET_KEY SECRET_KEY
+
