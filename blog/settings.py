@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 if os.getenv('DJANGO_DOCKER') != '1':
     DEBUG = True
 
-ALLOWED_HOSTS = ['www.jackmuratore.com', '172.17.0.1']
+ALLOWED_HOSTS = ['www.jackmuratore.com', '172.17.0.1', 'localhost']
 
 
 # Application definition
