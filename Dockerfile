@@ -12,3 +12,5 @@ ARG KEY
 
 env DJANGO_SECRET_KEY $KEY
 
+CMD python manage.py runserver 0.0.0.0:8000 --insecure
+
