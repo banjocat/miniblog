@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 if os.getenv('DJANGO_DOCKER') != '1':
     DEBUG = True
 
-ALLOWED_HOSTS = ['www.jackmuratore.com']
+ALLOWED_HOSTS = ['www.jackmuratore.com', '172.17.0.1']
 
 
 # Application definition
@@ -77,21 +77,12 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-if os.getenv('DJANGO_DOCKER') != '1':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db/db.sqlite3'),
-            }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db/db.sqlite3'),
         }
-else: # In production this is a volume inside a docker container
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, '/db/db.sqlite3'),
-            }
-        }
-
+}
 
 
 # Password validation
