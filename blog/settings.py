@@ -24,10 +24,10 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # when set in docker it is production
-if os.getenv('DJANGO_DOCKER') != 1:
+if os.getenv('DJANGO_DOCKER') != '1':
     DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.jackmuratore.com']
 
 
 # Application definition
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-if os.getenv('DJANGO_DOCKER') != 1:
+if os.getenv('DJANGO_DOCKER') != '1':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
