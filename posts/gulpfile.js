@@ -5,7 +5,7 @@ var rename = require('gulp-rename');
 var FILES = {
   'js': [
     './node_modules/jquery/dist/jquery.min.js',
-    './node_modules/markdown/lib/markdown.js'
+    './node_modules/markdown/lib/markdown.js',
   ]
 }
 gulp.task('less', function() {
